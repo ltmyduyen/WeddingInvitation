@@ -68,6 +68,7 @@ body {
 
 .double-happiness-symbol {
     width: 100%;
+    max-width: 99%;
     font-family: 'Playfair Display', 'Georgia', serif;
     
     font-size: clamp(20px, 8vw, 40px);
@@ -88,7 +89,7 @@ body {
 @media (max-width: 576px) {
     .oriental-hero-container { padding: 35px 15px; border-radius: 30px; }
     .oriental-hero-names { font-size: 28px; }
-    .double-happiness-symbol { font-size: 46px; }
+    .double-happiness-symbol { font-size: 28px; }
     .lantern { width: 35px; top: -10px; }
     .oriental-hero-photo { width: 95%; border-radius: 20px; }
     .oriental-hero-quote { font-size: 15px; }
@@ -164,7 +165,7 @@ body {
 @media (max-width: 576px) {
     .oriental-hero-container { padding: 35px 15px; border-radius: 30px; }
     .oriental-hero-names { font-size: 28px; }
-    .double-happiness-symbol { font-size: 46px; }
+    .double-happiness-symbol { font-size: 28px; }
     .lantern { width: 35px; top: -10px; }
     .oriental-hero-photo { width: 95%; border-radius: 20px; }
     .oriental-hero-quote { font-size: 15px; }
