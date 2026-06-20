@@ -83,6 +83,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Tự động tối ưu hóa hiển thị co giãn trên giao diện Mobile */
+@media (max-width: 576px) {
+    .oriental-hero-container { padding: 35px 15px; border-radius: 30px; }
+    .oriental-hero-names { font-size: 28px; }
+    .double-happiness-symbol { font-size: 46px; }
+    .lantern { width: 35px; top: -10px; }
+    .oriental-hero-photo { width: 95%; border-radius: 20px; }
+    .oriental-hero-quote { font-size: 15px; }
+}
 
 
 .oriental-hero-names {
