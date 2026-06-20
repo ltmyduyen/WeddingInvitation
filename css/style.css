@@ -69,7 +69,7 @@ body {
 .double-happiness-symbol {
     font-family: 'Playfair Display', 'Georgia', serif;
     
-    font-size: 40px;         /* Tăng nhẹ kích thước để nét chữ thư pháp nhìn bề thế */
+    font-size: clamp(32px, 8vw, 42px);
     color: #b31010;          /* Giữ màu đỏ trầu hoàng gia */
     font-weight: 900;        /* Đẩy độ dày lên mức tối đa để chữ đậm đà, sắc nét */
     line-height: 1;
