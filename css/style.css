@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* DÒNG THẦN CHÚ: Giúp mọi thuộc tính padding (khoảng đệm) và border (viền) 
+       đều được tính thụt vào trong, không bị cộng dồn kích thước gây tràn màn hình */
+    box-sizing: border-box !important; 
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Chặn đứng hoàn toàn hiện tượng lag/tràn màn hình theo chiều ngang */
 }
 
 .wedding-card-container {
