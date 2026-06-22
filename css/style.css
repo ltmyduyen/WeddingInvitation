@@ -607,8 +607,7 @@ body {
     align-items: center;     /* Căn giữa theo chiều dọc */
     width: 100%;             /* Ép khung luôn bằng chiều rộng thiệp */
     max-width: 100%;
-    padding: 0 10px;         /* Tạo khoảng cách an toàn 2 bên lề để không bao giờ chạm rìa */
-    box-sizing: border-box;  /* Ép tính toán kích thước chuẩn gồm cả padding */
+    padding: 0 10px;         /* Tạo khoảng cách an toàn 2 bên lề để không bao giờ chạm rìa *
     gap: 5px;                /* Khoảng cách nhỏ vừa phải giữa chú rể - tim - cô dâu */
 }
 
@@ -623,17 +622,20 @@ body {
 
 /* Khối bọc từng người (Chú rể / Cô dâu) */
 .person {
-    flex: 1;                 /* Tuyệt chiêu: Ép hai khối chia đều không gian bằng nhau tự động */
-    min-width: 0;            /* Khóa cứng chống phình khối trên mobile */
+    flex: 1;
+    min-width: 0;
     text-align: center;
+    display: flex;         /* Bổ sung để ép các thành phần bên trong xếp hàng dọc */
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Khung bọc ảnh dạng tròn hoặc bo góc */
 .img-frame {
     width: 100%;             /* Tự động lấy theo độ rộng của khối .person */
-    max-width: 130px;        /* Giới hạn kích thước ảnh lớn nhất trên máy tính */
+    max-width: 300px;        /* Giới hạn kích thước ảnh lớn nhất trên máy tính */
     aspect-ratio: 1 / 1;     /* Ép khung luôn là hình vuông chuẩn để bo tròn không bị méo */
-    margin: 0 auto 10px auto;/* Căn giữa khung ảnh */
+    margin: 10px auto auto;/* Căn giữa khung ảnh */
     border-radius: 50%;      /* Bo tròn xịn mịn */
     overflow: hidden;        /* Cắt bỏ phần ảnh thừa tràn ra ngoài khung tròn */
     border: 3px solid #ffffff; 
@@ -643,8 +645,9 @@ body {
 /* Ảnh gốc bên trong khung */
 .img-frame img {
     width: 100%;
+    object-fit : cover;
     height: 100%;
-    object-fit: cover;       /* Ép ảnh tự fit đầy khung tròn, không bị móp hay méo hình */
+    object-fit: fill;       /* Ép ảnh tự fit đầy khung tròn, không bị móp hay méo hình */
     display: block;
 }
 
@@ -663,13 +666,12 @@ body {
 /* Khung ảnh thu nhỏ lại từ 280px xuống 160px để vừa khít bề ngang 500px */
 .person img {
     transition: 0.5s ease-in-out;
-    width: 160px;
+    width: 16px;
     height: 160px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     border: 3px solid #ffffff;
-    /* Tạo viền trắng mảnh bao quanh ảnh */
     outline: 1px solid rgba(179, 16, 16, 0.2);
     /* Viền đỏ mờ ngoài cùng cực sang */
 }
@@ -767,9 +769,8 @@ body {
 
     /* Khung ảnh dâu rể bọc tròn mịn màng */
     .person img {
-        width: 200px;
-        /* Tăng nhẹ kích thước ảnh để cân xứng với chữ to */
-        height: 140px;
+        width: 170px;
+        height: 200px;
         border: 3.5px solid #ffffff;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
@@ -865,7 +866,7 @@ body {
 
 .wedding-info-title h2 {
     font-family: 'Alex Brush', 'Great Vibes', cursive;
-    font-size: 55px;
+    font-size: 45px;
     color: #b31010;
     font-weight: 580;
     line-height: 1.5;
@@ -1101,7 +1102,7 @@ body {
     }
 
     .wedding-time-row {
-        gap: 15px;
+        gap: 12px;
     }
 
     .time-col.side-val {
