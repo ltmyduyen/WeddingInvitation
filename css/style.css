@@ -267,7 +267,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 30       px;
-    font-size: 15px;
+    font-size: px;
     font-weight: 500;
 }
 
@@ -620,33 +620,13 @@ body {
     }
 }
 
-/* Khối bọc từng người (Chú rể / Cô dâu) */
-.person {
-    flex: 1;
-    min-width: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Khung bọc ảnh dạng tròn hoặc bo góc */
-.img-frame {
-    width: 100%;             /* Tự động lấy theo độ rộng của khối .person */
-    max-width: 400px;        /* Giới hạn kích thước ảnh lớn nhất trên máy tính */
-    aspect-ratio: 1 / 1;     /* Ép khung luôn là hình vuông chuẩn để bo tròn không bị méo */
-    margin: 10px auto auto;/* Căn giữa khung ảnh */
-    border-radius:100%;      /* Bo tròn xịn mịn */
-    overflow: hidden;        /* Cắt bỏ phần ảnh thừa tràn ra ngoài khung tròn */
-    border: 3px solid #ffffff; 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-}
 
 /* Ảnh gốc bên trong khung */
 .img-frame img {
+    text-align: center  ;
     width: 100%;
     object-fit : cover;
-    height: 100%;
+    height: 10%;
     object-fit: fill;       /* Ép ảnh tự fit đầy khung tròn, không bị móp hay méo hình */
     display: block;
 }
@@ -667,11 +647,11 @@ body {
 .person img {
     transition: 0.5s ease-in-out;
     width: 16px;
-    height: 160px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border: 3px solid #ffffff;
+    border: 3px solid rgba(179, 16, 16, 0.2);
     outline: 1px solid rgba(179, 16, 16, 0.2);
     /* Viền đỏ mờ ngoài cùng cực sang */
 }
@@ -682,6 +662,9 @@ body {
 
 /* Tên cô dâu/chú rể đổi sang font chữ có chân đồng bộ thiệp cưới, kích thước vừa vặn */
 .person h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: center;
     font-family: 'Playfair Display', 'Georgia', serif;
     margin-top: 18px;
     font-size: 24px;
@@ -691,7 +674,8 @@ body {
 }
 
 .person p {
-    font-size: 13px;
+    font-size: 15px;
+    text-align: center  ;
     color: #b38446;
     margin-top: 4px;
     text-transform: uppercase;
@@ -769,8 +753,9 @@ body {
 
     /* Khung ảnh dâu rể bọc tròn mịn màng */
     .person img {
-        width: 170px;
-        height: 200px;
+        text-align: center;
+        width: 180px;
+        height: 180px;
         border: 3.5px solid #ffffff;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
@@ -1037,11 +1022,11 @@ body {
     justify-content: center;
     align-items: center;
     gap: 25px;
-    margin: 3px 0;
+    margin: 3px 0px 30px 0px    ;
 }
 
 .time-col.side-val {
-    font-size: 22px;
+    font-size: 20px;
     /* Giờ và năm to rõ nét */
     color: #b31010;
     font-weight: 600;
@@ -1067,7 +1052,9 @@ body {
 }
 
 .lunar-calendar-text {
-    font-size: 16px;
+    width: 100%;
+    max-width: 450px;
+    font-size: 15px;
     color: #b38446;
     font-style: italic;
     margin-top: 20px;
