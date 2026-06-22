@@ -600,23 +600,66 @@ body {
 }
 
 /* Khống chế toàn bộ vùng chứa cô dâu chú rể tối đa 500px */
+
 .couple-wrapper {
-    max-width: 300px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    /* Đẩy dạt 2 bên cân đối */
-    align-items: center;
-    gap: 10px;
-    /* Khoảng cách an toàn để không bị vỡ hàng */
+    justify-content: center; /* Căn giữa các thành phần */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    width: 100%;             /* Ép khung luôn bằng chiều rộng thiệp */
+    max-width: 100%;
+    padding: 0 10px;         /* Tạo khoảng cách an toàn 2 bên lề để không bao giờ chạm rìa */
+    box-sizing: border-box;  /* Ép tính toán kích thước chuẩn gồm cả padding */
+    gap: 5px;                /* Khoảng cách nhỏ vừa phải giữa chú rể - tim - cô dâu */
 }
 
+@media (max-width: 300px) {
+    .couple-wrapper {
+        font-size: 30px;
+        /* Kích thước tối ưu hoàn hảo trên mobile */
+        margin: 0 12px;
+        /* Tạo khoảng hở rộng rãi sang 2 bên */
+    }
+}
+
+/* Khối bọc từng người (Chú rể / Cô dâu) */
 .person {
-    width: 42%;
-    /* Giới hạn chiều rộng mỗi block người */
+    flex: 1;                 /* Tuyệt chiêu: Ép hai khối chia đều không gian bằng nhau tự động */
+    min-width: 0;            /* Khóa cứng chống phình khối trên mobile */
     text-align: center;
 }
 
+/* Khung bọc ảnh dạng tròn hoặc bo góc */
+.img-frame {
+    width: 100%;             /* Tự động lấy theo độ rộng của khối .person */
+    max-width: 130px;        /* Giới hạn kích thước ảnh lớn nhất trên máy tính */
+    aspect-ratio: 1 / 1;     /* Ép khung luôn là hình vuông chuẩn để bo tròn không bị méo */
+    margin: 0 auto 10px auto;/* Căn giữa khung ảnh */
+    border-radius: 50%;      /* Bo tròn xịn mịn */
+    overflow: hidden;        /* Cắt bỏ phần ảnh thừa tràn ra ngoài khung tròn */
+    border: 3px solid #ffffff; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Ảnh gốc bên trong khung */
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Ép ảnh tự fit đầy khung tròn, không bị móp hay méo hình */
+    display: block;
+}
+
+/* Icon trái tim ở giữa nhịp đập */
+.heart {
+    font-size: 20px;         /* Giảm nhẹ size tim trên mobile để nhường chỗ cho ảnh */
+    color: #b31010;
+    flex-shrink: 0;          /* Khóa chết không cho icon tim bị bóp méo khi màn hình nhỏ */
+    animation: heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
 /* Khung ảnh thu nhỏ lại từ 280px xuống 160px để vừa khít bề ngang 500px */
 .person img {
     transition: 0.5s ease-in-out;
@@ -722,14 +765,6 @@ body {
     }
 }
 
-
-/* Hỗ trợ hiển thị mượt trên màn hình điện thoại siêu nhỏ (dưới 400px) */
-@media (max-width: 480px) {
-    .couple-wrapper {
-        gap: 8px;
-        /* Tăng nhẹ khoảng cách giữa chú rể và cô dâu cho thoáng */
-    }
-
     /* Khung ảnh dâu rể bọc tròn mịn màng */
     .person img {
         width: 200px;
@@ -759,7 +794,7 @@ body {
         text-transform: none;
         margin-bottom: 8px;
     }
-}
+
 
 /* =========================
    STORY
